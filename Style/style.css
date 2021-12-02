@@ -61,15 +61,16 @@ header {
 /*Main Page ----------------------*/
 #containerIndex {
     display: grid;
+    height: 100vh;
     grid-template-columns: 20vw 60vw 20vw; /*FreeSpace Content FreeSpace*/
-    grid-template-rows: 11vh 19vh 13vh 2vh 15vh 9vh 9vh 22vh;/*Header FreeSpace Title FreeSpace Description FreeSpace Button FreeSpace*/
-    background: url('../img/index_background.png');
+    grid-template-rows: 11vh 14% 13% 2% 25% 9% 9% 17%;/*Header FreeSpace Title FreeSpace Description FreeSpace Button FreeSpace*/
+    background: url('../img/index_backgroundd.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
 }
 
 #indexTitle {
-    color: #55453E;
+    color: #DCCFBF;
     font-family: 'Segoe Script';
     font-size: 2.5vmax;
     grid-column: 2/3;
@@ -87,6 +88,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.3vmax;
 }
 
 #indexButton {
