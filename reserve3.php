@@ -4,12 +4,46 @@ session_start();
 //Get reservation details from previous page to check the avaliable dates
 $location = $_SESSION['location'];
 $cottageType = $_SESSION['cottageType'];
-//There are 4 types of months: 31days, 30days, 28days, 29days. These arrays contain all dates of a month. Used to check for avaliable dates
-$thirtyDays = range(1,30);
-$thirtyOneDays = range(1,31);
-$twentyEightDays = range(1,28);
-$twentyNineDays = range(1,29);
+
+//Function to create an array of dates between two given dates 
+function getDatesFromRange($start, $end, $format = 'Y-m-d') {
+    $array = array();
+    $interval = new DateInterval('P1D');
+
+    $realEnd = new DateTime($end);
+    $realEnd->add($interval);
+
+    $period = new DatePeriod(new DateTime($start), $interval, $realEnd);
+
+    foreach($period as $date) { 
+        $array[] = $date->format($format); 
+    }
+
+    return $array;
+}
+
+//Function to check if an at least one date from an array of dates falls between two given dates
+function dates_in_range( string $start_date, string $end_date, array $dates ): bool
+{
+    $start_ts = strtotime($start_date);
+    $end_ts = strtotime($end_date);
+    foreach ( $dates as $key => $date ) {
+        $user_ts = strtotime($date);
+        if (($user_ts >= $start_ts) && ($user_ts <= $end_ts)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//Assign variables needed to find out avliable dates
+$getyear= $_GET['year'];
+$getmonth= $_GET['month'];
+$getduration= $_GET['duration'];
+$occupiedDates = array(); //Contains dates unavalibale to be chosen in YYYY-MM-DD format
+$occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD format
 ?>
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -91,7 +125,7 @@ $twentyNineDays = range(1,29);
                                 //Find out how many days are in a selected month
                                 if ($_GET['month']==2 AND $_GET['year']%400==0) {
                                     //Leap year
-                                    $monthtype = "twentyNineDays";
+                                    $monthtype = 29;
                                 } else {
                                     switch ($_GET['month']) {
                                         case 1:
@@ -101,19 +135,66 @@ $twentyNineDays = range(1,29);
                                         case 8:
                                         case 10:
                                         case 12:
-                                            $monthtype = "thirtyOneDays";
+                                            $monthType = 31;
                                             break;
                                         case 2:
-                                            $monthtype = "twentyEightDays";
+                                            $monthType = 28;
+                                            break;
                                         default:
-                                            $monthtype = "thirtyDays";
+                                            $monthType = 30;
                                             break;
                                     }
-                                }
+                                } 
 
-                                
-                                
-                                
+
+                                //Connect to DB and choose DB
+                                if ($conn=mysqli_connect('localhost','root','')) {
+                                    mysqli_select_db($conn, 'hp_reserved');
+                        
+                                    //Get all the occupied dates from DB
+                                    $sql = "SELECT `resCheckIn`,`resDuration` FROM `reservation`";
+                                    if ($stmt = mysqli_prepare($conn, $sql)) {
+                        
+                                        //Execute statement if preparation is successful
+                                        if (mysqli_stmt_execute($stmt)) {
+                                        } else {echo "<div class='reservePHPResponse'><p>Submission error. Try again later</p></div>";}
+                        
+                                    } else {echo "<div class='reservePHPResponse'><p>Connection check error. Try again later</p></div>";}
+                        
+                                    //Bind results
+                                    mysqli_stmt_bind_result($stmt, $checkIn, $duration);
+                                    //Buffer the result to count the data for the loop
+                                    mysqli_stmt_store_result($stmt);
+                        
+
+                                    if (mysqli_stmt_num_rows($stmt) > 0) {
+                                        while (mysqli_stmt_fetch($stmt)) {
+                                            $checkOut=date('Y-m-d', strtotime($checkIn. ' + '.$duration.' days'));
+                                            for ($i=1;$i<=$monthType;$i++) {
+                                                $iterationDate = strtotime($i."-".$getmonth."-".$getyear);
+                                                $iterationDate = date('Y-m-d',$iterationDate);
+                                                $iterationCheckout = date('Y-m-d', strtotime($iterationDate. ' + '.$getduration.' days'));
+                                                $iterationRange = GetDatesFromRange($iterationDate, $iterationCheckout);
+                                                if (dates_in_range($checkIn, $checkOut, $iterationRange)==true) {
+                                                    array_push($occupiedDates, $iterationDate);
+                                                }
+                                            }
+                                        }
+                                        //Convert from date to string. DD format
+                                        foreach ($occupiedDates as $date) {
+                                            $dayTemp=substr($date, 8, 2);
+                                            array_push($occupiedOnlyDay, $dayTemp);
+                                        }
+                                    }
+                                    //Only echo <option> with dates, which are avliable to be chosen
+                                    for ($a=1;$a<=$monthType;$a++) {
+                                        if (in_array($a, $occupiedOnlyDay)==false) {
+                                            echo "<option value='".$a."'>".$a."</option>";
+                                        }
+                                    }
+                        
+                                    
+                                } else {echo "<div class='reservePHPResponse'><p>Connection error. Try again later</p></div>";}
                                 ?>
                             </select>
                         </div>
