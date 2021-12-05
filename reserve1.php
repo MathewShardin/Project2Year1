@@ -1,3 +1,7 @@
+<?php
+//Start session to pass variables between pages
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -35,22 +39,22 @@
                 <form action="#" method="POST" id="reserveForm">
                     <div class="reserveTextInput">
                         <p>E-mail:</p>
-                        <input type="email" name="email">
+                        <input type="email" name="email" required>
                     </div>
 
                     <div class="reserveTextInput">
                         <p>Name:</p>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required>
                     </div>
 
                     <div class="reserveTextInput">
                         <p>Last name:</p>
-                        <input type="text" name="lastname">
+                        <input type="text" name="lastname" required>
                     </div>
 
                     <div class="reserveTextInput">
                         <p>Address:</p>
-                        <input type="text" name="address">
+                        <input type="text" name="address" required>
                     </div>
 
                     <div id="reserveSelects"> <!--Two divs (reserveSelects and reserveAgeInput) are used to place the <p> element above <select> elements-->
@@ -101,6 +105,7 @@
                         if (!empty($_POST['name']) AND !empty($_POST['lastname']) AND !empty($_POST['address'])) {
                             //If all inputs are valid
                             //Assign variables not to adress superglobals directly
+                            $_SESSION['email'] = $email;
                             $name=filter_input(INPUT_POST, 'name');
                             $lastname=filter_input(INPUT_POST, 'lastname');
                             $address=filter_input(INPUT_POST, 'address');
