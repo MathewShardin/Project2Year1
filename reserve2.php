@@ -83,7 +83,7 @@ session_start();
                         $_SESSION['numOfGuests'] = filter_input(INPUT_POST, 'numOfGuests');
                         $_SESSION['payment'] = filter_input(INPUT_POST, 'payment');
                         //Redirect user to the next step of reservation
-                        echo '<script type="text/javascript">location.href = "reserve3.php";</script>';
+                        echo '<script type="text/javascript">location.href = "reserve3.php?duration=1&year='.Date('Y').'&month=1";</script>';
                         
 
                     } else {echo "<div class='reservePHPResponse'><p>Please fill out all the fields</p></div>";}
