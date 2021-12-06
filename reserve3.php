@@ -152,8 +152,11 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
                                     mysqli_select_db($conn, 'hp_reserved');
                         
                                     //Get all the occupied dates from DB
-                                    $sql = "SELECT `resCheckIn`,`resDuration` FROM `reservation`";
+                                    $sql = "SELECT `resCheckIn`,`resDuration` FROM `reservation` WHERE `resCottageType`=? AND `resLocation`=?";
                                     if ($stmt = mysqli_prepare($conn, $sql)) {
+
+                                        //Bind parameters
+                                        mysqli_stmt_bind_param($stmt, 'ss', $cottageType, $location);
                         
                                         //Execute statement if preparation is successful
                                         if (mysqli_stmt_execute($stmt)) {
@@ -193,7 +196,7 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
                                         }
                                     }
                         
-                                    
+                
                                 } else {echo "<div class='reservePHPResponse'><p>Connection error. Try again later</p></div>";}
                                 ?>
                             </select>
@@ -202,6 +205,18 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
 
                     <input type="submit" name="submit" value="Next" id="reserveNextButton">
                 </form>
+
+                <?php
+                if ($_SERVER['REQUEST_METHOD']=='POST') {
+                    //Save the input values to SESSION to pass to the next page
+                    $_SESSION['duration']= filter_input(INPUT_POST, 'durationDropdown');
+                    $_SESSION['checkinYear'] = filter_input(INPUT_POST, 'checkinYear' );
+                    $_SESSION['checkinMonth'] = filter_input(INPUT_POST, 'checkinMonth');
+                    $_SESSION['checkinDay'] = filter_input(INPUT_POST, 'checkinDay');
+                    //Redirect user to the next step of reservation
+                    echo '<script type="text/javascript">location.href = "reserve4.php";</script>';
+                }
+                ?>
 
             </div>
         </div>
