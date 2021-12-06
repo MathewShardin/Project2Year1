@@ -170,14 +170,22 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
                         
 
                                     if (mysqli_stmt_num_rows($stmt) > 0) {
+                                        //Iterate through each line of the database containing check-in date and duration
                                         while (mysqli_stmt_fetch($stmt)) {
+                                            //Generate checkout date for each line from the DB
                                             $checkOut=date('Y-m-d', strtotime($checkIn. ' + '.$duration.' days'));
+                                            //Iterate through each day of a month. Starting from 1st of the month
                                             for ($i=1;$i<=$monthType;$i++) {
+                                                //Create a date object
                                                 $iterationDate = strtotime($i."-".$getmonth."-".$getyear);
-                                                $iterationDate = date('Y-m-d',$iterationDate);
+                                                $iterationDate = date('Y-m-d',$iterationDate); //Convert date to YYYY-MM-DD format
+                                                //Create the hypothetical checkout date based on the duration of stay
                                                 $iterationCheckout = date('Y-m-d', strtotime($iterationDate. ' + '.$getduration.' days'));
+                                                //Create an array of dates from iterationDate to iterationCheckoutDate
                                                 $iterationRange = GetDatesFromRange($iterationDate, $iterationCheckout);
+                                                //Check if any of the dates from an array fall into occupied dates from the DB
                                                 if (dates_in_range($checkIn, $checkOut, $iterationRange)==true) {
+                                                    //Add occpid starting dates to an array
                                                     array_push($occupiedDates, $iterationDate);
                                                 }
                                             }
