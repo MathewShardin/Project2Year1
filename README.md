@@ -6,6 +6,7 @@ Project 2, Period 2, Year 1 by Group E
 >HTML 5 <br>
 >CSS 3 <br>
 >mariaDB - phpMyAdmin <br>
+>XAMPP v3.3.0
 
 
 #### How to run?
