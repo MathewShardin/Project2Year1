@@ -40,17 +40,17 @@ session_start();
                     <div class="reserveDropInput">
                         <p>Location:</p>
                         <select name="location">
-                            <option value="loc1">Location 1</option>
-                            <option value="loc2">Location 2</option>
+                            <option value="Location 1">Location 1</option>
+                            <option value="Location 2">Location 2</option>
                         </select>
                     </div>
 
                     <div class="reserveDropInput">
                         <p>Cottage type <a href="cottagestraw.html" target="blank">(learn more)</a>:</p>
                         <select name="cottageType">
-                            <option value="straw">Straw</option>
-                            <option value="bamboo">Bamboo</option>
-                            <option value="brick">Brick</option>
+                            <option value="Straw">Straw</option>
+                            <option value="Bamboo">Bamboo</option>
+                            <option value="Brick">Brick</option>
                         </select>
                     </div>
 
