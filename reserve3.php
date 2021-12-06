@@ -23,8 +23,7 @@ function getDatesFromRange($start, $end, $format = 'Y-m-d') {
 }
 
 //Function to check if an at least one date from an array of dates falls between two given dates
-function dates_in_range( string $start_date, string $end_date, array $dates ): bool
-{
+function dates_in_range( string $start_date, string $end_date, array $dates ): bool {
     $start_ts = strtotime($start_date);
     $end_ts = strtotime($end_date);
     foreach ( $dates as $key => $date ) {
