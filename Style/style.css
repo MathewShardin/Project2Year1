@@ -275,12 +275,13 @@ header {
     opacity: 1;
 }
 /*------------------------------------*/
+
 /* Contact Page */
 #contentBody{
     display: grid;
     height: 100vh;
     grid-template-columns: 20vw 60vw 20vw; /*FreeSpace Content FreeSpace*/
-    grid-template-rows: 11vh 21.8% 5% 1% 5% 5% 1% 5% 5% 1% 5% 17% 17.2%;/*Header FreeSpace Title FreeSpace Description FreeSpace Button FreeSpace*/
+    grid-template-rows: 11vh 21.8% 5% 1% 5% 5% 1% 5% 5% 1% 5% 17% 17.2%;
     background: url('../img/index_backgroundd.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -399,5 +400,5 @@ header {
     color: #673828;
     font-size: 13px;
     font-family: "Segoe UI light";
-
 }
+/*---------------------------------------------*/
