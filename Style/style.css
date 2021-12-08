@@ -402,3 +402,199 @@ header {
     font-family: "Segoe UI light";
 }
 /*---------------------------------------------*/
+
+/*-------------------------------*/
+
+/*Empployee Login page---------------*/
+
+#containerEmployee {
+    display: grid;
+    grid-template-columns: 20% 60% 20%; /*FreeSpace GrayBox FreeSpace*/
+    grid-template-rows: 11vh 89vh; /*Header GreyBox*/
+    height: 100%;
+    background: url(../img/background_house.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat ;
+    background-size: cover;
+}
+#employeeContent{
+    display: grid;
+    grid-template-rows:11% 7% 6% 2% 3% 8% 2% 3% 3% 7% 8% 9% 2% 15% 2% 9% 9% ;
+    grid-template-columns: 20% 60% 20%;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 0.9;
+    height:auto;
+}
+.employeeTextTitle {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display:flex;
+    justify-content: center;
+    font: normal normal normal 5vh/7vh Segoe UI Symbol;
+    letter-spacing: 0px;
+    color: #7A5A4F;
+    text-shadow: inset 0px 1vh 0.6vh #00000029, 0px 1vh 0.6vh #00000029;
+    opacity: 1;
+}
+.employeeID {
+    grid-column: 2/3;
+    grid-row:4/5 ;
+    display: flex;
+    justify-content: center;
+    font: normal normal normal 2vh/3vh Segoe UI;
+    letter-spacing: 0px;
+    color: #674C42;
+    opacity: 1;
+}
+input[type=text] {
+    grid-column: 2/3;
+    grid-row: 6/7;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    width: 43vh;
+    height: 6vh;
+}
+#employeeFormID {
+    grid-column: 2/3;
+    grid-row: 6/7;
+    display: flex;
+    justify-content: center;
+}
+.employeePassword {
+    grid-column: 2/3;
+    grid-row: 8/9;
+    display: flex;
+    justify-content: center;
+    font: normal normal normal 2vh/3vh Segoe UI;
+    letter-spacing: 0px;
+    color: #674C42;
+    opacity: 1;
+}
+
+input[type=password] {
+    grid-column: 2/3;
+    grid-row: 10/11;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.1vh solid #707070;
+    opacity: 1;
+    width: 43vh;
+    height: 6vh;
+
+}
+#employeeFormPass {
+    grid-column: 2/3;
+    grid-row: 10/11;
+    display: flex;
+    justify-content: center;
+}
+#employeeLogin {
+    grid-column: 2/3;
+    grid-row: 12/13;
+    display: flex;
+    justify-content: center;
+}
+
+input[type=submit]
+{
+    background: #F4924B4D 0% 0% no-repeat padding-box;
+    border: 1px solid #5F372A;
+    border-radius: 5vh;
+    opacity: 0.95;
+    grid-column: 2/3;
+    grid-row: 12/13;
+    display: flex;
+    justify-content: center;
+    width: 20vh;
+}
+#employeePhoto {
+    grid-column: 2/3;
+    grid-row: 14/15;
+    display: flex;
+    justify-content: center;
+}
+.imageEmployee {
+    height: 13vh;
+    width: 13vh;
+    display: flex;
+    justify-content: center;
+}
+#employeeTextEnd {
+    grid-column: 2/3;
+    grid-row: 16/17;
+    display: flex;
+    justify-content: center;
+}
+.employeeTextEnd {
+    text-align: center;
+    font: normal normal normal 1.43vh/1.8vh Segoe UI;
+    letter-spacing: 0px;
+    color: #7C5C50;
+}
+
+/*-------------------------------*/
+
+/*Events page---------------*/
+#containerEvents {
+    display: grid;
+    grid-template-columns: 20% 60% 20%; /*FreeSpace GrayBox FreeSpace*/
+    grid-template-rows: 11vh 89vh; /*Header GreyBox*/
+    height: 100%;
+    background: url(../img/background_house.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat ;
+    background-size: cover;
+}
+#contentEvents {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 0.9;
+    display: grid;
+    grid-template-columns: 3% 94% 3% ;
+    grid-template-rows:2% 7.4% 3% 52% 16% 5.36% 7% 7%;
+}
+.titleEvents {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    font: normal normal normal 4.9vh/7.8vh Segoe Script;
+    letter-spacing: 0px;
+    color: #55453E;
+    opacity: 1;
+}
+#eventsTable {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+#imageEvents {
+    grid-column: 2/3;
+    grid-row: 5/6;
+    display: flex;
+    justify-content: center;
+}
+.imageEvents {
+    height: 17vh;
+    width: 17vh;
+    display: flex;
+    justify-content: center;
+}
+#eventsTextEnd {
+    grid-column: 2/3;
+    grid-row: 7/8;
+    display: flex;
+    justify-content: center;
+}
+.eventsTextEnd {
+    text-align: center;
+    font: normal normal 300 1.4vh/1.8vh Segoe UI;
+    letter-spacing: 0px;
+    color: #673828;
+    opacity: 1;
+}
