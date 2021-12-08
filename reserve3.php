@@ -205,6 +205,9 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
                         
                 
                                 } else {echo "<div class='reservePHPResponse'><p>Connection error. Try again later</p></div>";}
+                                //Close connection & Statement
+                                mysqli_stmt_close($stmt);
+                                mysqli_close($conn);
                                 ?>
                             </select>
                         </div>
