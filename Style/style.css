@@ -274,6 +274,57 @@ header {
     border: 1px solid #707070;
     opacity: 1;
 }
+
+.reserveTextInput textarea {
+    resize: none;
+    width: 100%;
+    height: 30vh;
+    border: 1px solid #707070;
+    opacity: 1;
+    font-size: 1.2vmax;
+}
+
+.reserveCheckbox {
+    width: 56%;
+    color: #41513D;
+    font-size: 1.2vmax;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="checkbox"] {
+    /*Hide default checkbox*/
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    background-color: #fff;
+
+    cursor: pointer;
+    font: inherit;
+    color: #41513D;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #41513D;
+    display: grid;
+    place-content: center;
+}
+
+.form-control + .form-control {
+    margin-top: 1em;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: #41513D;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
 /*------------------------------------*/
 
 /* Contact Page */
@@ -403,9 +454,7 @@ header {
 }
 /*---------------------------------------------*/
 
-/*-------------------------------*/
-
-/*Empployee Login page---------------*/
+/*Employee Login page---------------*/
 
 #containerEmployee {
     display: grid;
@@ -449,7 +498,7 @@ header {
     color: #674C42;
     opacity: 1;
 }
-input[type=text] {
+#employeeFormID input[type=text] {
     grid-column: 2/3;
     grid-row: 6/7;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -475,7 +524,7 @@ input[type=text] {
     opacity: 1;
 }
 
-input[type=password] {
+#employeeFormPass input[type=password] {
     grid-column: 2/3;
     grid-row: 10/11;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -498,8 +547,8 @@ input[type=password] {
     justify-content: center;
 }
 
-input[type=submit]
-{
+#employeeLogin input[type=submit] {
+    cursor: pointer;
     background: #F4924B4D 0% 0% no-repeat padding-box;
     border: 1px solid #5F372A;
     border-radius: 5vh;
@@ -598,3 +647,4 @@ input[type=submit]
     color: #673828;
     opacity: 1;
 }
+/*-----------------------------------------------------*/
