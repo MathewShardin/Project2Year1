@@ -25,7 +25,7 @@ session_start();
                     </div>
                     <div class="headerOneButton">Locations</div>
                     <div class="headerOneButton">Events</div>
-                    <div class="headerOneButton">Contact</div>
+                    <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
                     <div class="headerOneButton">Staff</div>
                 </div>
             </header>
