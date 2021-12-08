@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Login</title>
+  <link href="Style/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form action="employeeLogin.php" method="POST">
+  <div id="containerEmployee"> <!--Container for the whole page-->
+    <header>
+      <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='index.html'">
+      <div id="headerButtons"> <!--This div is used to align the buttons with flexbox-->
+        <div class="headerOneButton" id="headerDropDown">
+          Accommodation
+          <div class="dropdown-content"> <!--Drop down menu contents-->
+            <a href="cottagestraw.html">Straw</a>
+            <a href="cottagebamboo.html">Bamboo</a>
+            <a href="cottagebrick.html">Brick</a>
+          </div>
+        </div>
+        <div class="headerOneButton">Locations</div>
+        <div class="headerOneButton">Events</div>
+        <div class="headerOneButton">Contact</div>
+        <div class="headerOneButton">Staff</div>
+      </div>
+    </header>
+    <div id="employeeContent">
+      <p class="employeeTextTitle"> Welcome Back! </p>
+      <p class="employeeID"> Employee ID </p>
+      <div id="employeeFormID">
+        <input type="text" name="EmployeeID" id="EmployeeID" required="" />
+      </div>
+      <p class="employeePassword"> Employee Password</p>
+      <div id="employeeFormPass">
+        <input type="password" name="EmployeePassword" id="EmployeePassword" required="" />
+      </div>
+      <div id="employeeLogin">
+        <input type="submit" name="submit" id="submit" value="Login"/>
+      </div>
+      <div id="employeePhoto">
+        <img class="imageEmployee" src="img/logo_cottage.png" alt="Cottage Logo">
+      </div>
+      <div id="employeeTextEnd">
+        <p class="employeeTextEnd">Hello there! This section of our website is strictly reserved to our personnel!
+          Thank you for your understanding. Click here to return to our <a href=""> Home Page!</p> </a>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>
