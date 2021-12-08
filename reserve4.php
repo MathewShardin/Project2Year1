@@ -120,7 +120,18 @@ function check_in_range($start_date, $end_date, $date_from_user) {
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     //Save choices into session
                     $_SESSION['event'] = filter_input(INPUT_POST, 'eventDropdown');
-                    $_SESSION['addServices'] = filter_input(INPUT_POST, 'addServices')." ".filter_input(INPUT_POST,'champagne');
+                    if (isset($_POST['champagne'])) {
+                        $_SESSION['addServices'] = filter_input(INPUT_POST, 'addServices')." ".filter_input(INPUT_POST,'champagne');
+                        $_SESSION['champagneBottle'] = 1;
+                    } else {
+                        $_SESSION['addServices'] = filter_input(INPUT_POST, 'addServices');
+                        $_SESSION['champagneBottle'] = 0;
+                    }
+
+                    //Close connection & Statement
+                    mysqli_stmt_close($stmt);
+                    mysqli_close($conn);
+                    
                     //Redirect user to the next step of reservation
                     echo '<script type="text/javascript">location.href = "reserve5.php";</script>';
                 }
