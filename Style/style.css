@@ -275,3 +275,129 @@ header {
     opacity: 1;
 }
 /*------------------------------------*/
+/* Contact Page */
+#contentBody{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 20vw 60vw 20vw; /*FreeSpace Content FreeSpace*/
+    grid-template-rows: 11vh 21.8% 5% 1% 5% 5% 1% 5% 5% 1% 5% 17% 17.2%;/*Header FreeSpace Title FreeSpace Description FreeSpace Button FreeSpace*/
+    background: url('../img/index_backgroundd.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+#contactHeader{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 2vmax;
+    color: #55453E;
+}
+#contactHeader h1{
+    font-family: "Segoe Script Regular";
+}
+#contactBackground{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/14;
+    background-color: rgba(226,226,226,.9  );
+    
+}
+#headerEmail{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    padding-left: 5.4%;
+}
+#Breakline1{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 4/5;
+    grid-template-columns: 5.4% 44.6% 50%;
+    grid-template-rows: 100%;
+}
+#contactEmail{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 5/6;
+    padding-left: 14%;
+}
+#headerAddress{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 6/7;
+    padding-left: 5.4%;
+}
+#Breakline2{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 7/8;
+    grid-template-columns: 5.4% 44.6% 50%;
+    grid-template-rows: 100%;
+}
+#contactAddress{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 8/9;
+    padding-left: 14%;
+}
+#headerPhone{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 9/10;
+    padding-left: 5.4%;
+}
+#Breakline3{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 10/11;
+    grid-template-columns: 5.4% 44.6% 50%;
+    grid-template-rows: 100%;
+}
+#contactPhone{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 11/12;
+    padding-left: 14%;
+}
+.contactText{
+    font-family: 'Segoe UI light';
+    font-size: 30px;
+    color: #706361;
+}
+.blBackground{
+    display: grid;
+    grid-column: 2/3;
+    background-color: #6D8A64   ;
+}
+#contactLogo{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 12/13;
+    align-items: center;
+    justify-items: center;
+    padding-top:2%;
+}
+#contactLogo img{
+    width: 15.6%;
+    height: auto;
+}
+#contactCT{
+    display: grid;
+    grid-row: 13/14;
+    grid-column: 2/3;
+    align-items: center;
+    justify-items: center;
+    padding-left: 24%;
+    padding-right: 24%;
+    text-align: center;
+    padding-top: 1.6%;
+}
+#contactCT p{
+    color: #673828;
+    font-size: 13px;
+    font-family: "Segoe UI light";
+
+}
