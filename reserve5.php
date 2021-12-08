@@ -81,7 +81,7 @@ if ($numOfGuests <= 1) {
                         $_SESSION['guestGender'.$a.''] = filter_input(INPUT_POST, 'guestGender'.$a.'');
                         $_SESSION['guestDOB'.$a.''] = filter_input(INPUT_POST, 'guestDOB'.$a.'');
                     }
-                    //Redirect user to processing page
+                    //Redirect user to next page
                     echo '<script type="text/javascript">location.href = "reserve6.php";</script>'; 
                 }
                 ?>
