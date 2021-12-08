@@ -66,7 +66,7 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
                     </div>
                     <div class="headerOneButton">Locations</div>
                     <div class="headerOneButton">Events</div>
-                    <div class="headerOneButton">Contact</div>
+                    <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
                     <div class="headerOneButton">Staff</div>
                 </div>
             </header>
@@ -216,9 +216,9 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
                 <?php
                 if ($_SERVER['REQUEST_METHOD']=='POST') {
                     //Save the input values to SESSION to pass to the next page
-                    $_SESSION['duration']= filter_input(INPUT_POST, 'durationDropdown');
-                    $_SESSION['checkinYear'] = filter_input(INPUT_POST, 'checkinYear' );
-                    $_SESSION['checkinMonth'] = filter_input(INPUT_POST, 'checkinMonth');
+                    $_SESSION['duration']= $_GET['duration'];
+                    $_SESSION['checkinYear'] = $_GET['year'];
+                    $_SESSION['checkinMonth'] = $_GET['month'];
                     $_SESSION['checkinDay'] = filter_input(INPUT_POST, 'checkinDay');
                     //Redirect user to the next step of reservation
                     echo '<script type="text/javascript">location.href = "reserve4.php";</script>';
