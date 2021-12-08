@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2021 at 04:17 PM
+-- Generation Time: Dec 08, 2021 at 10:55 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -40,6 +40,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`custEmail`, `custName`, `custSurname`, `custAddress`, `custDateofBirth`) VALUES
+('example@gmail.com', 'Brad', 'Pitt', 'USA, Los Angeles', '1980-03-21'),
 ('Shardin111@gmail.com', 'Matvei', 'Shardin', 'Monetpassage 23 - 11', '2003-04-25'),
 ('test@test.com', 'Eric', 'Koston', '2535A E 12th St, Los Angeles, CA 90021, USA', '1975-04-29');
 
@@ -87,6 +88,24 @@ INSERT INTO `guest` (`guestId`, `guestName`, `guestSurname`, `guestDateofBirth`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `hpstaff`
+--
+
+CREATE TABLE `hpstaff` (
+  `userName` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hpstaff`
+--
+
+INSERT INTO `hpstaff` (`userName`, `password`) VALUES
+('admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reservation`
 --
 
@@ -97,7 +116,7 @@ CREATE TABLE `reservation` (
   `resCheckIn` date NOT NULL,
   `resDuration` tinyint(8) NOT NULL,
   `resAddServices` varchar(255) NOT NULL,
-  `eventId` int(11) NOT NULL,
+  `eventId` int(11) DEFAULT NULL,
   `resCottageType` varchar(7) NOT NULL,
   `resLocation` varchar(50) NOT NULL,
   `resPayment` varchar(50) NOT NULL,
@@ -109,7 +128,8 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`resId`, `custEmail`, `resNumberGuests`, `resCheckIn`, `resDuration`, `resAddServices`, `eventId`, `resCottageType`, `resLocation`, `resPayment`, `resPrice`) VALUES
-(1, 'test@test.com', 2, '2022-02-14', 3, 'BBQ', 1, 'Brick', 'Netherlands, Emmen', 'PayPal', 1500);
+(1, 'test@test.com', 2, '2022-02-14', 3, 'BBQ', 1, 'Brick', 'Location 2', 'PayPal', 1500),
+(3, 'example@gmail.com', 2, '2022-02-27', 4, 'NULL', NULL, 'Brick', 'Location 2', 'Paypal', 420);
 
 --
 -- Indexes for dumped tables
@@ -133,6 +153,12 @@ ALTER TABLE `event`
 ALTER TABLE `guest`
   ADD PRIMARY KEY (`guestId`),
   ADD KEY `resId` (`resId`);
+
+--
+-- Indexes for table `hpstaff`
+--
+ALTER TABLE `hpstaff`
+  ADD PRIMARY KEY (`userName`);
 
 --
 -- Indexes for table `reservation`
@@ -162,7 +188,7 @@ ALTER TABLE `guest`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `resId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `resId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
