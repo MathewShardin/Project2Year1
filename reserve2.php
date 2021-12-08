@@ -62,7 +62,7 @@ session_start();
                     <div class="reserveDropInput">
                         <p>Payment method:</p>
                         <select name="payment">
-                            <option value="Cash">Cash on site</option>
+                            <option value="cash">Cash on site</option>
                             <option value="ideal">iDeal</option>
                             <option value="paypal">PayPal</option>
                             <option value="card">Card on site</option>
