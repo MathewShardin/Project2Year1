@@ -1,7 +1,12 @@
 <?php
 //Start session to pass variables between pages
 session_start();
+//Get important variables from SESSION
+$duration = $_SESSION['duration'];
 $checkinDate = $_SESSION['checkinYear']."-".$_SESSION['checkinMonth']."-".$_SESSION['checkinDay'];
+$checkoutDate = date('Y-m-d', strtotime($checkinDate. ' + '.$duration.' days'));
+$cottageType = $_SESSION['cottageType'];
+
 //Function to check if a date falls between two dates
 function check_in_range($start_date, $end_date, $date_from_user) {
     // Convert to timestamp
@@ -40,7 +45,7 @@ function check_in_range($start_date, $end_date, $date_from_user) {
                     </div>
                     <div class="headerOneButton">Locations</div>
                     <div class="headerOneButton">Events</div>
-                    <div class="headerOneButton">Contact</div>
+                    <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
                     <div class="headerOneButton">Staff</div>
                 </div>
             </header>
@@ -55,14 +60,14 @@ function check_in_range($start_date, $end_date, $date_from_user) {
                     <div class="reserveDropInput">
                             <p>Event to attend:</p>
                             <select name="eventDropdown">
-                                <option value="victory day">9 May</option>
+                                <option value="NULL">No event</option>
                                 <?php
                                 //Connect to DB and choose DB
                                 if ($conn=mysqli_connect('localhost','root','')) {
                                     mysqli_select_db($conn, 'hp_reserved');
                         
                                     //Get all the events and their dates from DB
-                                    $sql = "SELECT `eventName`, `eventDate` FROM `event`";
+                                    $sql = "SELECT `eventName`, `eventDate`, `eventId` FROM `event`";
                                     if ($stmt = mysqli_prepare($conn, $sql)) {
                         
                                         //Execute statement if preparation is successful
@@ -72,14 +77,16 @@ function check_in_range($start_date, $end_date, $date_from_user) {
                                     } else {echo "<div class='reservePHPResponse'><p>Connection check error. Try again later</p></div>";}
                         
                                     //Bind results
-                                    mysqli_stmt_bind_result($stmt, $eventName, $eventDate);
+                                    mysqli_stmt_bind_result($stmt, $eventName, $eventDate, $eventId);
                                     //Buffer the result to count the data for the loop
                                     mysqli_stmt_store_result($stmt);
                         
 
                                     if (mysqli_stmt_num_rows($stmt) > 0) {
                                         while (mysqli_stmt_fetch($stmt)) {
-
+                                            if (check_in_range($checkinDate, $checkoutDate, $eventDate)==True) {
+                                                echo "<option value='".$eventId."'>".$eventName." on ".$eventDate."</option>";
+                                            }
                                         }
                                     }
                         
@@ -89,12 +96,34 @@ function check_in_range($start_date, $end_date, $date_from_user) {
                             </select> 
                         </div>
 
+                        <div class="reserveTextInput">
+                            <p>Additional Services:</p>
+                            <textarea name="addServices"></textarea>
+                        </div>
+
+                        <!--Display champagne bottle option only if the cottageType is brick-->
+                        <?php
+                        if ($cottageType == "Brick") {
+                        echo '<div class="reserveCheckbox">
+                            <input type="checkbox" name="champagne" value="Champagne Bottle" id="checkboxBottle">
+                            <p>Champagne bottle (+15 &euro;)</p>
+                        </div>';
+                        }
+                        ?>
+
 
                     <input type="submit" name="submit" value="Next" id="reserveNextButton">
                 </form>
 
 
                 <?php
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    //Save choices into session
+                    $_SESSION['event'] = filter_input(INPUT_POST, 'eventDropdown');
+                    $_SESSION['addServices'] = filter_input(INPUT_POST, 'addServices')." ".filter_input(INPUT_POST,'champagne');
+                    //Redirect user to the next step of reservation
+                    echo '<script type="text/javascript">location.href = "reserve5.php";</script>';
+                }
                 ?>
 
             </div>
