@@ -79,6 +79,10 @@ for ($a=1; $a<=$numOfGuests-1; $a++) {
     } else {echo "<div class='reservePHPResponse'><p>Connection error. Try again later</p></div>";}
 }
 
+//Close session
+session_unset(); //delete all SESSION variables
+session_destroy();
+
 //Redirect user to thank you page
 echo '<script type="text/javascript">location.href = "reservationthankyou.html";</script>'; 
 
