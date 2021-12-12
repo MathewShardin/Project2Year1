@@ -7,7 +7,7 @@
 }
 
 body {
-	font-family: 'Segoe UI', 'sans-serif';
+	font-family: 'Segoe UI', 'sans-serif', 'Arial';
 }
 
 .clearfix {
@@ -355,6 +355,7 @@ input[type="checkbox"]:checked::before {
 }
 /*------------------------------------*/
 
+
 /* Contact Page */
 #contentBody{
     display: grid;
@@ -676,3 +677,53 @@ input[type="checkbox"]:checked::before {
     opacity: 1;
 }
 /*-----------------------------------------------------*/
+
+
+/*Thank you page-----------------*/
+
+.thankyouBackground{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2;
+    background-color: rgba(226,226,226,.9);
+    justify-content: center;
+    text-align: center;
+}
+
+.thankyouHeader h1{
+    padding-top: 10%;
+    font-family: "Segoe Script Regular";
+    font-size: 5vh;
+    color: #87665A;
+}
+
+.thankyouText p{
+    font: "Arial";
+    font-size: 4.5vh;
+    color: #706361;
+    font-weight:lighter;
+}
+
+.thankyouLogo img{
+    width: 20vh;
+    height: auto;
+}
+
+@media only screen and (max-width: 700px){
+    .thankyouHeader h1{
+        padding-top: 30%;
+        font-family: "Segoe Script Regular";
+        font-size: 8vw;
+        color: #87665A;
+    }
+    
+.thankyouText p{
+    font-size: 4vw;
+}
+
+.thankyouLogo img{
+    width: 70%;
+    height: auto;
+}
+}
+/*-------------------------------*/
