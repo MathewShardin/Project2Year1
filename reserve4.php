@@ -43,10 +43,10 @@ function check_in_range($start_date, $end_date, $date_from_user) {
                             <a href="cottagebrick.html">Brick</a>
                         </div>
                     </div>
-                    <div class="headerOneButton">Locations</div>
+                    <div class="headerOneButton" onClick="location.href='locations.html'">Locations</div>
                     <div class="headerOneButton">Events</div>
                     <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
-                    <div class="headerOneButton">Staff</div>
+                    <div class="headerOneButton" onClick="location.href='employeeLogin.html'">Staff</div>
                 </div>
             </header>
 

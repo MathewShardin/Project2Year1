@@ -100,10 +100,10 @@ $finalPrice = calculateFinalPrice($checkinDate, $checkoutDate, $cottageType, $ch
                             <a href="cottagebrick.html">Brick</a>
                         </div>
                     </div>
-                    <div class="headerOneButton">Locations</div>
+                    <div class="headerOneButton" onClick="location.href='locations.html'">Locations</div>
                     <div class="headerOneButton">Events</div>
                     <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
-                    <div class="headerOneButton">Staff</div>
+                    <div class="headerOneButton" onClick="location.href='employeeLogin.html'">Staff</div>
                 </div>
             </header>
 
