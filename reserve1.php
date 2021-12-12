@@ -111,6 +111,7 @@ session_start();
                             $address=filter_input(INPUT_POST, 'address');
                             //Concatenate the year, month, date of birth to satisfy mySQLi date format
                             $dob=filter_input(INPUT_POST, 'dobYear').".".filter_input(INPUT_POST, 'dobMonth').".".filter_input(INPUT_POST, 'dobDay');
+                            $_SESSION['fullName'] = $name." ".$lastname;
 
 
                             //Check if a CUSTOMER with this email already exists
