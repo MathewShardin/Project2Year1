@@ -683,6 +683,7 @@ input[type="checkbox"]:checked::before {
 
 .thankyouBackground{
     display: grid;
+    padding-top: 10%;
     grid-column: 2/3;
     grid-row: 2;
     background-color: rgba(226,226,226,.9);
@@ -691,7 +692,6 @@ input[type="checkbox"]:checked::before {
 }
 
 .thankyouHeader h1{
-    padding-top: 10%;
     font-family: "Segoe Script Regular";
     font-size: 5vh;
     color: #87665A;
@@ -710,11 +710,13 @@ input[type="checkbox"]:checked::before {
 }
 
 @media only screen and (max-width: 700px){
-    .thankyouHeader h1{
+.thankyouBackground{
+    padding-top: 15%;
+}
+
+.thankyouHeader h1{
         padding-top: 30%;
-        font-family: "Segoe Script Regular";
         font-size: 8vw;
-        color: #87665A;
     }
     
 .thankyouText p{
