@@ -1,6 +1,15 @@
 <?php
 //PROCESSING PAGE
 
+
+//Initialize PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
 //Start session to pass variables between pages
 session_start();
 //Get important variables from SESSION
@@ -16,6 +25,7 @@ $addServices = $_SESSION['addServices'];
 $finalPrice = $_SESSION['finalPrice'];
 $event = $_SESSION['event'];
 $numOfGuests = $_SESSION['numOfGuests'];
+$fullName = $_SESSION['fullName'];
 
 //Save infomration to RESERVATION table of DB
 //Connect to DB and choose DB
@@ -78,6 +88,39 @@ for ($a=1; $a<=$numOfGuests-1; $a++) {
     
     } else {echo "<div class='reservePHPResponse'><p>Connection error. Try again later</p></div>";}
 }
+
+
+//PHPMailer settings
+$mail = new PHPMailer();
+$mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'hpreservednl@gmail.com'; //Corprate email
+$mail->Password = 'hpreservedemmen'; 
+$mail->SMTPSecure = 'tls';
+$mail->Port = 587; //Typically 587
+//Generate message
+$message = "<p>Hello! Thank you for your reservation with Huff & Puff.</p>
+<p>We <b>confirm</b> a reservation for:</p>
+<p>Name: ".$fullName."</p>
+<p>Check-in date: ".$checkinDate."</p>
+<p>Duration of your stay: ".$duration." days</p>
+<p>Event you would like to attend: ".$event."</p>
+<p>Additional Services: ".$addServices."</p>
+<p>Payment Method: ".$paymentMethod."</p>
+<p>Price: ".$finalPrice." &euro;</p>
+<p>Something is wrong? Contact us!</p>
+";
+//Letter details
+$mail->setFrom('hpreservednl@gmail.com', 'H&P Reserved');
+$mail->addReplyTo('hpreservednl@gmail.com', 'H&P Reserved');
+$mail->addAddress($email, $fullName);
+//Letter contents
+$mail->Subject = 'Reservation confirmation';
+$mail->isHTML(true);
+$mail->Body = $message;
+$mail->Send(); //Send email
+
 
 //Close session
 session_unset(); //delete all SESSION variables
