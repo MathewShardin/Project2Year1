@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2021 at 10:55 AM
+-- Generation Time: Dec 13, 2021 at 10:27 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -40,8 +40,13 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`custEmail`, `custName`, `custSurname`, `custAddress`, `custDateofBirth`) VALUES
+('dan@mail.ru', 'Danil', 'Borstch', 'Chernyshevskogo 15', '2003-03-17'),
 ('example@gmail.com', 'Brad', 'Pitt', 'USA, Los Angeles', '1980-03-21'),
+('johnsmith@gmail.com', 'John', 'Smith', 'Monetpassage 23 - 11', '1996-09-29'),
+('mathew.shardin@student.nhlstenden.com', 'Mathew ', 'Shardin', 'Monetpassage 23 - 11', '2003-01-01'),
 ('Shardin111@gmail.com', 'Matvei', 'Shardin', 'Monetpassage 23 - 11', '2003-04-25'),
+('shardin@mail.ru', 'Mathew', 'Shardin', 'Monetpassage 23 - 11', '2000-05-25'),
+('test2@gmail.com', 'Mike', 'Mo', '137 Strathearn Pl, Simi Valley, CA 93065, United States', '1990-03-27'),
 ('test@test.com', 'Eric', 'Koston', '2535A E 12th St, Los Angeles, CA 90021, USA', '1975-04-29');
 
 -- --------------------------------------------------------
@@ -61,7 +66,8 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`eventId`, `eventDate`, `eventName`) VALUES
-(1, '2021-04-20', 'St.Patricks Day');
+(1, '2021-04-20', 'St.Patricks Day'),
+(2, '2022-02-09', 'Test event');
 
 -- --------------------------------------------------------
 
@@ -83,7 +89,11 @@ CREATE TABLE `guest` (
 --
 
 INSERT INTO `guest` (`guestId`, `guestName`, `guestSurname`, `guestDateofBirth`, `guestGender`, `resId`) VALUES
-(1, 'Sean', 'Malto', '1980-07-18', 'male', 1);
+(1, 'Sean', 'Malto', '1980-07-18', 'male', 1),
+(2, 'Spencer', 'Barton', '1995-04-21', 'Male', 3),
+(3, 'Ana', 'Smith', '1998-06-24', 'female', 10),
+(4, 'Mathew', 'shardin', '2003-04-25', 'male', 11),
+(5, 'John', 'Smith', '2021-12-09', 'male', 14);
 
 -- --------------------------------------------------------
 
@@ -93,15 +103,16 @@ INSERT INTO `guest` (`guestId`, `guestName`, `guestSurname`, `guestDateofBirth`,
 
 CREATE TABLE `hpstaff` (
   `userName` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `userType` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hpstaff`
 --
 
-INSERT INTO `hpstaff` (`userName`, `password`) VALUES
-('admin', 'admin');
+INSERT INTO `hpstaff` (`userName`, `password`, `userType`) VALUES
+('admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -129,7 +140,13 @@ CREATE TABLE `reservation` (
 
 INSERT INTO `reservation` (`resId`, `custEmail`, `resNumberGuests`, `resCheckIn`, `resDuration`, `resAddServices`, `eventId`, `resCottageType`, `resLocation`, `resPayment`, `resPrice`) VALUES
 (1, 'test@test.com', 2, '2022-02-14', 3, 'BBQ', 1, 'Brick', 'Location 2', 'PayPal', 1500),
-(3, 'example@gmail.com', 2, '2022-02-27', 4, 'NULL', NULL, 'Brick', 'Location 2', 'Paypal', 420);
+(3, 'example@gmail.com', 2, '2022-02-27', 4, 'NULL', NULL, 'Brick', 'Location 2', 'Paypal', 420),
+(8, 'test2@gmail.com', 1, '2021-03-12', 5, '', NULL, 'Straw', 'Location 1', 'cash', 500),
+(9, 'shardin@mail.ru', 1, '2021-12-16', 1, '', NULL, 'Bamboo', 'Location 2', 'ideal', 242),
+(10, 'johnsmith@gmail.com', 2, '2022-05-13', 3, 'Extra Pillow', NULL, 'Bamboo', 'Location 2', 'card', 726),
+(11, 'dan@mail.ru', 2, '2022-02-10', 3, 'Set of spices Champagne Bottle', NULL, 'Brick', 'Location 2', 'cash', 1107),
+(13, 'Shardin111@gmail.com', 1, '2023-06-12', 1, '', NULL, 'Straw', 'Location 1', 'cash', 145),
+(14, 'mathew.shardin@student.nhlstenden.com', 2, '2022-02-03', 6, ' Champagne Bottle', 2, 'Brick', 'Location 2', 'cash', 2196);
 
 --
 -- Indexes for dumped tables
@@ -176,19 +193,19 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `eventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `eventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `guestId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `guestId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `resId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `resId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
