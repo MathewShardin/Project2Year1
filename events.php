@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Events</title>
 </head>
-<body>
+
 <link href="Style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -30,6 +30,29 @@
   <div id="contentEvents">
     <p class="titleEvents">Events</p>
     <div id="eventsTable">
+        <table class="Tableevents">
+
+            <?php
+            $conn = mysqli_connect("localhost","root","","hp_reserved");
+            if ($conn-> connect_error) {
+                die("Connection failed:" . $conn-> connect_error);
+            }
+            $sql ="SELECT eventDate, eventName from event";
+            $result = $conn-> query($sql);
+            if ($result-> num_rows > 0 ){
+                while ($row = $result-> fetch_assoc()){
+                    echo "<tr class='trevents'><td class='tdTable'> 	" .$row["eventDate"] . "</td><td>" . $row["eventName"] . "</td></tr>";
+                }
+                echo"</table>";
+            }
+            else {
+                echo " 0 result";
+            }
+            $conn-> close();
+            ?>
+
+        </table>
+
 
     </div>
 
