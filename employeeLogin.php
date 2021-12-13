@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $conn= mysqli_connect("localhost","root","","hp_reserved") or
 die("Connection Failed" .mysqli_connect_error());
 if(!$conn)
@@ -25,4 +27,5 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         echo"username or password incorrect";
     }
 }
+session_destroy();
 ?>
