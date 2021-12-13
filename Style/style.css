@@ -729,3 +729,75 @@ input[type="checkbox"]:checked::before {
 }
 }
 /*-------------------------------*/
+
+/*location page---------------*/
+#locationcontainer{
+	width: 800px;
+    height: 600px;
+	display: grid;
+	grid-template-columns: 400px 400px;
+	grid-template-rows: 150px 150px 150px 150px;
+	margin-left: 50px;
+    margin-top: 130px;
+    background-color: aliceblue;
+}
+
+.locationpic1{
+    height: 22vh;
+    width: 57vh;
+}
+.locationtextone{
+	background-color:#917C78;
+    padding: 20px;
+    color:#E2DDDC;
+	opacity: 0.8;
+}
+.locationpic2{
+    height: 22vh;
+    width: 57vh;
+}
+.locationtexttwo{
+	background-color:#6B846A;
+    padding: 20px;
+    color:#E2DDDC;
+}
+.locationpic3{
+    width: 400px;
+    height: 150px;
+}
+.locationtextthree{
+	background-color:#917C78;
+    padding: 20px;
+    color:#E2DDDC;
+}
+.locationpic4{
+    width: 400px;
+    height: 150px;
+}
+.locationtextfour{
+	background-color:#6A836A;
+    padding: 20px;
+    color:#E2DDDC;
+}
+
+.background1{
+    background-color: #E2E2E2;
+    padding: 20px;
+    color: aliceblue;
+}
+.locations{
+    width: 800px;
+    height: 47px;
+    display: grid;
+    grid-template-columns: 800px;
+    grid-template-rows: 30px;
+    margin-top:83px;
+    margin-left: 357px;
+    font-family: 'Segoe Script';
+    background-color: #E7E4DF;
+	opacity:0.6;
+    justify-items: center;
+    justify-self: start;
+
+}
+/*-----------------------------------------------------*/
