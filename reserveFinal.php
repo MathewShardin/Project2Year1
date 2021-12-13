@@ -126,6 +126,10 @@ $mail->Send(); //Send email
 session_unset(); //delete all SESSION variables
 session_destroy();
 
+//Close connection & Statement
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
+
 //Redirect user to thank you page
 echo '<script type="text/javascript">location.href = "reservationthankyou.html";</script>'; 
 
