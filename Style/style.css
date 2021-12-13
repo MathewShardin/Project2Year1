@@ -649,6 +649,22 @@ input[type="checkbox"]:checked::before {
 #eventsTable {
     grid-column: 2/3;
     grid-row: 4/5;
+    font: normal normal normal 5.4vh/7vh Segoe UI;
+    letter-spacing: 0px;
+    color: #55453E;
+    opacity: 1;
+    text-align: center;
+}
+.Tableevents{
+    border: 0.4vh solid #55453E;
+    opacity: 1;
+    width: 100% ;
+}
+.tdTable {
+    border-right: 0.4vh solid #55453E;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
 }
 
 #imageEvents {
