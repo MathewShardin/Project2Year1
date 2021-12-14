@@ -31,7 +31,7 @@ if ($numOfGuests <= 1) {
                         </div>
                     </div>
                     <div class="headerOneButton" onClick="location.href='locations.html'">Locations</div>
-                    <div class="headerOneButton">Events</div>
+                    <div class="headerOneButton" onClick="location.href='events.php'">Events</div>
                     <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
                     <div class="headerOneButton" onClick="location.href='employeeLogin.html'">Staff</div>
                 </div>
