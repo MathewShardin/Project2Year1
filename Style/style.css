@@ -353,6 +353,18 @@ input[type="checkbox"]:checked::before {
 .reserveOverview {
     font-size: 1.5vmax;
 }
+
+.checkinDayDropdown option:disabled {
+    color: black;
+    cursor: not-allowed;
+    background-color: rgb(221, 175, 175);
+}
+
+.checkinDayDropdown option {
+    cursor: pointer;
+    background-color: #919c8e;
+    color: black;
+}
 /*------------------------------------*/
 
 
