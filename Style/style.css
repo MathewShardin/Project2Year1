@@ -405,6 +405,11 @@ input[type="checkbox"]:checked::before {
     grid-row: 5/6;
     padding-left: 14%;
 }
+#contactEmail a{
+    font-family: 'Segoe UI light';
+    font-size: 30px;
+    color: #706361;
+}
 #headerAddress{
     display: grid;
     grid-column: 2/3;
@@ -423,6 +428,11 @@ input[type="checkbox"]:checked::before {
     grid-column: 2/3;
     grid-row: 8/9;
     padding-left: 14%;
+}
+#contactAddress a{
+    font-family: 'Segoe UI light';
+    font-size: 30px;
+    color: #706361;
 }
 #headerPhone{
     display: grid;
@@ -477,10 +487,11 @@ input[type="checkbox"]:checked::before {
     padding-top: 1.6%;
 }
 #contactCT p{
-    color: #673828;
-    font-size: 13px;
-    font-family: "Segoe UI light";
+        color: #673828;
+        font-size: 13px;
+        font-family: "Segoe UI light";
 }
+
 /*---------------------------------------------*/
 
 /*Employee Login page---------------*/
