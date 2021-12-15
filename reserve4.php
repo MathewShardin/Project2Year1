@@ -128,6 +128,28 @@ function check_in_range($start_date, $end_date, $date_from_user) {
                         $_SESSION['champagneBottle'] = 0;
                     }
 
+
+                    //Save name of the event
+                    $sql = "SELECT `eventName` FROM `event` WHERE `eventId`=?";
+                    if ($stmt = mysqli_prepare($conn, $sql)) {
+
+                        mysqli_stmt_bind_param($stmt, 'i', $_SESSION['event']);
+                        
+                        //Execute statement if preparation is successful
+                        if (mysqli_stmt_execute($stmt)) {
+                        } else {echo "<div class='reservePHPResponse'><p>Submission error. Try again later</p></div>";}
+        
+                    } else {echo "<div class='reservePHPResponse'><p>Connection check error. Try again later</p></div>";}
+                    //Bind results
+                    mysqli_stmt_bind_result($stmt, $eventName);
+                    //Buffer the result to count the data for the loop
+                    mysqli_stmt_store_result($stmt);
+                    if (mysqli_stmt_num_rows($stmt) > 0) {
+                        mysqli_stmt_fetch($stmt);
+                        $_SESSION['eventName'] = $eventName;
+                    }
+
+
                     //Close connection & Statement
                     mysqli_stmt_close($stmt);
                     mysqli_close($conn);

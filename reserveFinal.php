@@ -23,7 +23,8 @@ $paymentMethod = $_SESSION['payment'];
 $champagneBottle = $_SESSION['champagneBottle'];
 $addServices = $_SESSION['addServices'];
 $finalPrice = $_SESSION['finalPrice'];
-$event = $_SESSION['event'];
+$event = $_SESSION['event']; //This is event id
+$eventName = $_SESSION['eventName'];
 $numOfGuests = $_SESSION['numOfGuests'];
 $fullName = $_SESSION['fullName'];
 
@@ -105,8 +106,9 @@ $message = "<p>Hello! Thank you for your reservation with Huff & Puff.</p>
 <p>Name: ".$fullName."</p>
 <p>Check-in date: ".$checkinDate."</p>
 <p>Duration of your stay: ".$duration." days</p>
-<p>Event you would like to attend: ".$event."</p>
+<p>Event you would like to attend: ".$eventName."</p>
 <p>Additional Services: ".$addServices."</p>
+<p>Number of people expected: ".$numOfGuests."</p>
 <p>Payment Method: ".$paymentMethod."</p>
 <p>Price: ".$finalPrice." &euro;</p>
 <p>Something is wrong? Contact us!</p>
