@@ -673,9 +673,11 @@ input[type="checkbox"]:checked::before {
 }
 .tdTable {
     border-right: 0.4vh solid #55453E;
+
     opacity: 1;
     display: flex;
     justify-content: center;
+
 }
 
 #imageEvents {

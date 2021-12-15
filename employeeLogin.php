@@ -14,13 +14,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $sql="SELECT * from hpstaff where username='".$EmployeeID."'AND password='".$EmployeePassword."' ";
     $result= mysqli_query($conn, $sql);
     $row= mysqli_fetch_array($result);
-    if($row["usertype"]=="user")
+    if($row["userType"]=="user")
     {
         echo"user";
     }
-    elseif($row["usertype"]=="admin")
+    elseif($row["userType"]=="admin")
     {
-        header("location:add.php");
+        echo "Admin";
     }
     else
     {
