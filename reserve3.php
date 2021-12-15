@@ -119,7 +119,7 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
                             }
                             ?>
                             </select>
-                            <select name="checkinDay"> <!--Check-in date - Day-->
+                            <select name="checkinDay" class="checkinDayDropdown"> <!--Check-in date - Day-->
                                 <?php
                                 //Find out how many days are in a selected month
                                 if ($_GET['month']==2 AND $_GET['year']%400==0) {
@@ -200,6 +200,8 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
                                     for ($a=1;$a<=$monthType;$a++) {
                                         if (in_array($a, $occupiedOnlyDay)==false) {
                                             echo "<option value='".$a."'>".$a."</option>";
+                                        } else {
+                                            echo "<option value='".$a."' disabled>".$a."</option>";
                                         }
                                     }
                         
