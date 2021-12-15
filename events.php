@@ -61,7 +61,7 @@
     </div>
     <div id="eventsTextEnd">
       <p class="eventsTextEnd">Events require a reservation in advance. Don't forget to choose the event you
-        would like to attend while reserving your stay. Contact us if you have any questions!</p> </a>
+        would like to attend while reserving your stay.<br>Contact us if you have any questions!</p> </a>
     </div>
 
 
