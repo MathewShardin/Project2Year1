@@ -356,15 +356,14 @@ input[type="checkbox"]:checked::before {
 
 .checkinDayDropdown option:disabled {
     color: black;
-    cursor: not-allowed;
     background-color: rgb(221, 175, 175);
 }
 
 .checkinDayDropdown option {
-    cursor: pointer;
     background-color: #919c8e;
     color: black;
 }
+
 /*------------------------------------*/
 
 
@@ -555,6 +554,7 @@ input[type="checkbox"]:checked::before {
     grid-row: 6/7;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
+    font-size: 1.8vmax;
     opacity: 1;
     width: 43vh;
     height: 6vh;
@@ -584,7 +584,7 @@ input[type="checkbox"]:checked::before {
     opacity: 1;
     width: 43vh;
     height: 6vh;
-
+    font-size: 1.8vmax;
 }
 #employeeFormPass {
     grid-column: 2/3;
@@ -601,7 +601,7 @@ input[type="checkbox"]:checked::before {
 
 #employeeLogin input[type=submit] {
     cursor: pointer;
-    background: #F4924B4D 0% 0% no-repeat padding-box;
+    background: #f4924b4d 0% 0% no-repeat padding-box;
     border: 1px solid #5F372A;
     border-radius: 5vh;
     opacity: 0.95;
@@ -610,6 +610,14 @@ input[type="checkbox"]:checked::before {
     display: flex;
     justify-content: center;
     width: 20vh;
+    font-size: 1.8vmax;
+    color: #5F372A;
+}
+#employeeLogin input[type=submit]:hover {
+    background-color: #5F372A;
+    border: 1px solid #5F372A;
+    color: #f5944f4d;
+
 }
 #employeePhoto {
     grid-column: 2/3;
