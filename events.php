@@ -41,7 +41,7 @@
             $result = $conn-> query($sql);
             if ($result-> num_rows > 0 ){
                 while ($row = $result-> fetch_assoc()){
-                    echo "<tr class='trevents'><td class='tdTable'> 	" .$row["eventDate"] . "</td><td class=''>" . $row["eventName"] . "</td></tr>";
+                    echo "<tr><td class='tdTable'> 	" .$row["eventDate"] . "</td><td class='tdTable'>" . $row["eventName"] . "</td></tr>";
                 }
                 echo"</table>";
             }
