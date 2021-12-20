@@ -3,8 +3,8 @@ session_start();
 //Processing Page for logging in
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Get input values
-    $employeeID=$_POST["EmployeeID"];
-    $employeePassword=$_POST["EmployeePassword"];
+    $employeeID = $_POST["EmployeeID"];
+    $employeePassword = $_POST["EmployeePassword"];
 
 
     //Connect to DB and Select DB
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (mysqli_stmt_num_rows($stmt) > 0) {
             mysqli_stmt_fetch($stmt);
-            if ($employeeID == $userName AND $employeePassword == $password) {
+            if ($employeeID == $userName AND password_verify($employeePassword,$password) == True) {
                 //If credentials are correct
                 $_SESSION['loggedIn'] = true;
                 //Redirect user to staff page
