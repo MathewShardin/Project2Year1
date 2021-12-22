@@ -10,6 +10,7 @@ if (!$_SESSION['loggedIn'] == True) {
         <title>H&P - Staff</title>
         <link href = "Style/style.css" type = "text/css" rel = "stylesheet" >
     </head>
+    Page under construction
     <body>
     </body>
 </html>
