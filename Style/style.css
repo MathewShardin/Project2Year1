@@ -30,7 +30,7 @@ header {
 #headerImage {
     grid-column: 2/3;
     width: auto;
-    height: 16vh;
+    height: 22vh;
     z-index: 11;
 }
 #headerImage:hover {
