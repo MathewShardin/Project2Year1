@@ -118,7 +118,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3vmax;
+    font-size: 1svmax;
 }
 
 #indexButton {
