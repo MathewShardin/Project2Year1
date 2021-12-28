@@ -159,6 +159,22 @@ header {
     align-items: center;
 }
 
+#accomodationSubtitle {
+    color: #f4924b;
+    font-family: 'Segoe Script';
+    font-size: 1vmax;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    justify-content: right;
+    align-items: right;
+    display: flex;
+    font-size: 1vmax;
+    margin-right: 13vh;
+    margin-left: 40vh;
+    margin-bottom: 40vh;
+    margin-top: 5vh;
+}
+
 #accomodationDescription {
     grid-row: 4/6;
     grid-column: 3/3;
@@ -181,6 +197,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -100vh;
+    
 }
 
 #accomodationButton button {
