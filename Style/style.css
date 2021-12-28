@@ -161,19 +161,18 @@ header {
 
 #accomodationDescription {
     grid-row: 4/6;
-    grid-column: 50vw;
-    text-align: right;
+    grid-column: 3/3;
+    text-align: left;
     color: white;
-    display:flex;
-    /* justify-content: right;
-    align-items: right; */
+    display: flex;
+    justify-content: right;
+    align-items: right;
     font-size: 1vmax;
-    /* padding-top: 100px;
-    padding-left: 100px;
-    padding-right: 10px; */
-    /* padding: 15px 15px 50px 50px;
-    position: relative; */
-    right: 0px;
+    margin-right: 20vh;
+    margin-left: -40vh;
+    overflow: visible;   /*change to 'visible'*/
+    /* white-space: nowrap; */
+    margin-bottom: 15vh;
 }
 
 #accomodationButton {
