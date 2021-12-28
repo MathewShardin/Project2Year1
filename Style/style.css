@@ -146,6 +146,63 @@ header {
 }
 /*-------------------------------*/
 
+/*Accomodation Pages ----------------------*/
+
+#accomodationTitle {
+    color: #f4924b;
+    font-family: 'Segoe Script';
+    font-size: 1vmax;
+    grid-column: 2/3;
+    grid-row: 1/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#accomodationDescription {
+    grid-row: 4/6;
+    grid-column: 50vw;
+    text-align: right;
+    color: white;
+    display:flex;
+    /* justify-content: right;
+    align-items: right; */
+    font-size: 1vmax;
+    /* padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 10px; */
+    /* padding: 15px 15px 50px 50px;
+    position: relative; */
+    right: 0px;
+}
+
+#accomodationButton {
+    grid-column: 3/3;
+    grid-row: 8/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#accomodationButton button {
+    background-color: #f4924b;
+    border: solid 1px #2c462b ;
+    color: #2c462b;
+    font-size: 1.5vmax;
+    padding: 2vw;
+    border-radius: 60px;
+}
+
+#accomodationButton button:hover {
+    cursor: pointer;
+    background-color: #6d8a64;
+    color: #E5D7C7;
+    border: solid 1px #594A44;
+}
+
+
+/*-------------------------------*/
+
 /*Reservation pages---------------*/
 #containerReserve {
     display: grid;
