@@ -217,6 +217,13 @@ header {
     border: solid 1px #594A44;
 }
 
+#strawImage {
+    display: block;
+    width: 70vh;
+    height: 50vh;
+    margin-top: 30vh;
+    margin-left: 35vh;
+}
 
 /*-------------------------------*/
 
