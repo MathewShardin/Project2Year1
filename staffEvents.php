@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+//Check if a user is logged in and redirect the user back to login page if not
+session_start();
+if (!$_SESSION['loggedIn'] == True) {
+    echo '<script type="text/javascript">location.href = "employeeLogin.html";</script>';
+}
+?>
 <html lang="en-US">
     <head>
         <title>H&P - Staff</title>
@@ -9,7 +16,7 @@
     <body>
         <div id="staffEventsContainer"> <!--Container for the whole page-->
             <header>
-                <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='signOut.php'">
+                <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='signOut.php?type=1'">
                 <div id="headerButtons"> <!--This div is used to align the buttons with flexbox-->
                     <div class="headerOneButton" onClick="location.href='reservationsOverview.php'">Reservations</div>
                     <div class="headerOneButton" onClick="location.href='staffEvents.php'">Events</div>
@@ -63,6 +70,11 @@
                     mysqli_stmt_close($stmt);
                     mysqli_close($conn);
                     ?>
+
+                    <!--Last line of table with link to add new events-->
+                    <tr>
+                        <td><a href='staffAddEvent.php'>+ New event</a></td>
+                    </tr>
 
                 </table>
             </div>
