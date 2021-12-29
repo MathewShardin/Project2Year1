@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>H&P Reserved</title>
+        <meta charset="utf-8">
+        <link href="Style/style.css" rel="stylesheet" type="text/css">
+        <!--LINK FAVICON <link rel="shortcut icon" type="image/jpg" href=""/>-->
+    </head>
+    <body>
+        <div id="containerIndex"> <!--Container for the whole page-->
+            <header>
+                <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='index.html'">
+                <div id="headerButtons"> <!--This div is used to align the buttons with flexbox-->
+                    <div class="headerOneButton" id="headerDropDown">
+                        Accommodation
+                        <div class="dropdown-content"> <!--Drop down menu contents-->
+                            <a href="cottagestraw.html">Straw</a>
+                            <a href="cottagebamboo.html">Bamboo</a>
+                            <a href="cottagebrick.html">Brick</a>
+                        </div>
+                    </div>
+                    <div class="headerOneButton" onClick="location.href='locations.html'">Locations</div>
+                    <div class="headerOneButton" onClick="location.href='events.php'">Events</div>
+                    <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
+                    <div class="headerOneButton" onClick="location.href='employeeLogin.html'">Staff</div>
+                </div>
+            </header>
+
+            <!--Title of the page.-->
+            <div id="accomodationTitle">
+                <h1>The straw cottage</h1>
+            </div>
+            
+            <!-- Mentions the type of cottage -->
+            <div id="accomodationSubtitle">
+                <h2>Cottage Information</h2>
+            </div>
+
+            <!--Description of the cottage-->
+            <div id="accomodationDescription">
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing 
+                    and typesetting industry. Lorem Ipsum has been 
+                    the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled
+                    it to make a type specimen book. It hassurvived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s 
+                    with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus 
+                    PageMaker including versions of Lorem Ipsum.
+                    Lorem Ipsum is simply dummy text of the printing and 
+                    typesetting industry. 
+                </p>
+            </div> 
+
+            <!-- Picture of the cottage -->
+            <div>
+                <img id="strawImage" src="img/straw.png" alt="The straw cottage">
+            </div>
+
+            <div id="accomodationButton">
+                <button type="button" onclick="location.href='reserve1.php'"><b>Book me</b></button>
+            </div>
+            
+            <!-- Price of the cottage -->
+            <div id="accomodationPrice">
+                <p>
+                    100E/ PER NIGHT
+                </p>
+            </div>  
+
+        </div>
+    </body>
+</html>
