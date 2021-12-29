@@ -6,6 +6,7 @@
 </head>
 
 <link href="Style/style.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" type="ico" href="img/favicon.ico"/>
 </head>
 <body>
 

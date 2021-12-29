@@ -49,7 +49,7 @@ $occupiedOnlyDay = array(); //Contains dates unavalibale to be chosen in DD form
         <title>H&P Reserved</title>
         <meta charset="utf-8">
         <link href="Style/style.css" rel="stylesheet" type="text/css">
-        <!--LINK FAVICON <link rel="shortcut icon" type="image/jpg" href=""/>-->
+        <link rel="shortcut icon" type="ico" href="img/favicon.ico"/>
     </head>
     <body>
         <div id="containerReserve"> <!--Container for the whole page-->

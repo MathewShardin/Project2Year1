@@ -9,6 +9,7 @@ if (!$_SESSION['loggedIn'] == True) {
     <head>
         <title>H&P - Staff</title>
         <link href = "Style/style.css" type = "text/css" rel = "stylesheet" >
+        <link rel="shortcut icon" type="ico" href="img/favicon.ico"/>
     </head>
     Page under construction
     <body>
