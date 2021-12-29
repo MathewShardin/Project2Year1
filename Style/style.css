@@ -169,7 +169,7 @@ header {
     align-items: right;
     display: flex;
     font-size: 1vmax;
-    margin-right: 13vh;
+    margin-right: 12vh;
     margin-left: 40vh;
     margin-bottom: 40vh;
     margin-top: 5vh;
@@ -184,8 +184,25 @@ header {
     justify-content: right;
     align-items: right;
     font-size: 1vmax;
-    margin-right: 20vh;
-    margin-left: -40vh;
+    margin-right: 25vh;
+    margin-left: -44vh;
+    overflow: visible;   /*change to 'visible'*/
+    /* white-space: nowrap; */
+    margin-bottom: 15vh;
+}
+
+#accomodationPrice {
+    grid-row: 4/6;
+    grid-column: 3/3;
+    text-align: left;
+    color: #f4924b;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    font-size: 1vmax;
+    margin-right: 27vh;
+    margin-left: -38vh;
+    margin-top: 35vh;
     overflow: visible;   /*change to 'visible'*/
     /* white-space: nowrap; */
     margin-bottom: 15vh;
@@ -197,7 +214,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -100vh;
+    margin-left: -108vh;
     
 }
 
@@ -222,7 +239,7 @@ header {
     width: 70vh;
     height: 50vh;
     margin-top: 30vh;
-    margin-left: 35vh;
+    margin-left: 27vh;
 }
 
 /*-------------------------------*/
