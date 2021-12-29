@@ -12,7 +12,7 @@
                 <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='signOut.php'">
                 <div id="headerButtons"> <!--This div is used to align the buttons with flexbox-->
                     <div class="headerOneButton" onClick="location.href='reservationsOverview.php'">Reservations</div>
-                    <div class="headerOneButton" o  nClick="location.href='staffEvents.php'">Events</div>
+                    <div class="headerOneButton" onClick="location.href='staffEvents.php'">Events</div>
                     <div class="headerOneButton" onClick="location.href='signOut.php'">Sign out</div>
                 </div>
             </header>
