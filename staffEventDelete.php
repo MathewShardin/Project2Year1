@@ -1,4 +1,11 @@
 <?php
+//Check if a user is logged in and redirect the user back to login page if not
+session_start();
+if (!$_SESSION['loggedIn'] == True) {
+    echo '<script type="text/javascript">location.href = "employeeLogin.html";</script>';
+}
+?>
+<?php
 //Processing page
 if ($id = filter_input(INPUT_GET, 'id')) {
     if ($conn = mysqli_connect('localhost','root','')) {
