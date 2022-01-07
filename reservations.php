@@ -24,12 +24,28 @@
 
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Test</title>
-  </head>
+<html lang="en-US">
+    <head>
+        <title>H&P - Reservations</title>
+        <meta charset="utf-8">
+        <link href="Style/style.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" type="ico" href="img/favicon.ico"/>
+    </head>
   <body>
+  <div id="staffEventsContainer"> <!--Container for the whole page-->
+            <header>
+                <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='signOut.php?type=1'">
+                <div id="headerButtons"> <!--This div is used to align the buttons with flexbox-->
+                    <div class="headerOneButton" onClick="location.href='reservationsOverview.php'">Reservations</div>
+                    <div class="headerOneButton" onClick="location.href='staffEvents.php'">Events</div>
+                    <div class="headerOneButton" onClick="location.href='signOut.php'">Sign out</div>
+                </div>
+            </header>
+            
+            <div id="staffEventsTitle">
+                <h1>Events</h1>
+            </div> 
+            
      <table border="1">
        <tr>
          <th>First Name</th>
