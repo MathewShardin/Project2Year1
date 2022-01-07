@@ -48,10 +48,8 @@
             
      <table border="1">
        <tr>
-         <th>First Name</th>
-         <th>Last Name</th>
-         <th>Email</th>
-         <th>Payment method</th>
+         <th>Customer First Name</th>
+         <th>Customer Last Name</th>
          <th>Check-in date</th>
          <th>Duration</th>
          <th>Details</th>
@@ -65,8 +63,6 @@
              <tr>
                  <td><?php echo $row['custFName'] ?></td>
                  <td><?php echo $row['custLName'] ?></td>
-                 <td><?php echo $row['custEmail'] ?></td>
-                 <td><?php echo $row['resPayment'] ?></td>
                  <td><?php echo $row['resCheckIn'] ?></td>
                  <td><?php echo $row['resDuration'] ?></td>
                  <td><a href="<?php echo 'view.php?email=' . $row['custEmail'] . '&checkin=' . $row['resCheckIn'] ?>">Details</a></td>
