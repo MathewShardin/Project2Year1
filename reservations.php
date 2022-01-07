@@ -43,7 +43,7 @@
             </header>
             
             <div id="staffEventsTitle">
-                <h1>Events</h1>
+                <h1>Reservations</h1>
             </div> 
             
      <table border="1">
