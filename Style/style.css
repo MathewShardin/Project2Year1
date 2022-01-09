@@ -1048,3 +1048,8 @@ input[type="checkbox"]:checked::before {
     margin-left: 32%;
 }
 /*------------------------------------------------------*/
+
+/*Staff Pages - Reservation Overviews-------------------*/
+#reservationsOverviewTable {
+    border: 1px red solid;
+}
