@@ -42,7 +42,7 @@ session_start();
                     echo "<td>".$row['custSurname']."</td>";
                     echo "<td>".$row1['resCheckIn']."</td>";
                     echo "<td>".$row1['resDuration']."</td>";
-                    echo "<td><a href='customerOverview.php?id=".$row['custEmail']."'>Details</a></td>";
+                    echo "<td><a href='reservationDetails.php?id=".$row['custEmail']."'>Details</a></td>";
                     echo "</tr>";
                 }
         
