@@ -5,54 +5,70 @@
         <link href = "Style/style.css" type = "text/css" rel = "stylesheet" >
         <link rel="shortcut icon" type="ico" href="img/favicon.ico"/>
     </head>
-    <body class=" location">
-        <div id="contentBody"> <!--Container for the whole page-->
-            <header>
-                <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='index.html'">
-                <div id="headerButtons"> <!--This div is used to align the buttons with flexbox-->
-                    <div class="headerOneButton" id="headerDropDown">
-                        Accommodation
-                        <div class="dropdown-content"> <!--Drop down menu contents-->
-                            <a href="cottagestraw.html">Straw</a>
-                            <a href="cottagebamboo.html">Bamboo</a>
-                            <a href="cottagebrick.html">Brick</a>
+    <body>
+        <div class="loc-container"> <!--This div is container div-->
+            <div id="loc-header"> <!--This is header -->
+                <header>
+                    <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='index.html'">
+                    <div id="headerButtons"> <!--This div is used to align the buttons with flexbox-->
+                        <div class="headerOneButton" id="headerDropDown">
+                            Accommodation
+                            <div class="dropdown-content"> <!--Drop down menu contents-->
+                                <a href="cottagestraw.html">Straw</a>
+                                <a href="cottagebamboo.html">Bamboo</a>
+                                <a href="cottagebrick.html">Brick</a>
+                            </div>
                         </div>
+                        <div class="headerOneButton" onClick="location.href='locations.html'">Locations</div>
+                        <div class="headerOneButton" onClick="location.href='events.php'">Events</div>
+                        <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
+                        <div class="headerOneButton" onClick="location.href='employeeLogin.html'">Staff</div>
                     </div>
-                    <div class="headerOneButton" onClick="location.href='locations.html'">Locations</div>
-                    <div class="headerOneButton" onClick="location.href='events.php'">Events</div>
-                    <div class="headerOneButton" onClick="location.href='contact.html'">Contact</div>
-                    <div class="headerOneButton" onClick="location.href='employeeLogin.html'">Staff</div>
-                </div>
-            </header>
-
-            <div class="locations">
-                <h2>Locations</h2>
+                </header>
             </div>
-            <div id="locationcontainer">
-              <div><img class="locationpic1" src="img/locationpic1.jpg" alt="locationpic1"></div>
-              <div class="locationtextone">
-                  <h4>Lorem Ipsum</h4>
-                  <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
-                      for previewing layouts and visual mockups.</p>
-              </div>
-              <div class="locationtexttwo">
-                  <h4>Lorem Ipsum</h4>
-                  <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
-                      for previewing layouts and visual mockups.</p>
-              </div>
-              <div ><img class="locationpic2" src = "img/locationpic2.jpeg" alt ="locationpic2"></div>
-                <div><img class="locationpic3" src = "img/locationpic3.jpg" alt ="locationpic3"></div>
-                <div class="locationtextthree">
-                    <h4>Lorem Ipsum</h4>
-                    <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
-                        for previewing layouts and visual mockups.</p>
-                </div>
-                <div class="locationtextfour">
-                    <h4>Lorem Ipsum</h4>
-                    <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
-                        for previewing layouts and visual mockups.</p>
-                </div>
-                <div ><img class="locationpic4" src = "img/locationpic4.jpg" alt ="locationpic4"></div>
-          </div>
+            <div id="loc-title"> <!--This is location title -->
+                <h2>LOCATIONS</h2>
+            </div>
+            <div id="loc-content1"> <!--starting of location main content -->
+                <h3>Lorem ipsum</h3> <br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries,
+                     but also the leap into electronic typesetting, remaining essentially unchanged</p>
+            </div>
+            <div id="loc-pic1">  
+            </div>
+            <div id="loc-pic2">  
+            </div>
+            <div id="loc-content2">
+                <h3>Lorem ipsum</h3> <br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries,
+                     but also the leap into electronic typesetting, remaining essentially unchanged</p>
+            </div>
+            <div id="loc-content3">
+                <h3>Lorem ipsum</h3> <br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries,
+                     but also the leap into electronic typesetting, remaining essentially unchanged</p>
+            </div>
+            <div id="loc-pic3">
+            </div>
+            <div id="loc-pic4">   
+            </div>
+            <div id="loc-content4">
+                <h3>Lorem ipsum</h3> <br>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries,
+                     but also the leap into electronic typesetting, remaining essentially unchanged</p>
+            </div>
+        </div>   
     </body>
 </html>
