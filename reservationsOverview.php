@@ -1,58 +1,59 @@
 <!DOCTYPE html>
-<?php
-//Check if a user is logged in and redirect the user back to login page if not
-session_start();
-//if (!$_SESSION['loggedIn'] == True) {
-//    echo '<script type="text/javascript">location.href = "employeeLogin.html";</script>';
-//}
-?>
-<html lang="en-US">
-    <head>
-        <title>H&P - Staff</title>
-        <link href = "Style/style.css" type = "text/css" rel = "stylesheet" >
-        <link rel="shortcut icon" type="ico" href="img/favicon.ico"/>
-    </head>
-    <body>
-        <?php
-            $conn = mysqli_connect("localhost", "root", "")
-            OR DIE ("Could not connect to the database");
-            mysqli_select_db($conn, "hp_reserved");
-            $sql = "SELECT * FROM customer";
-            $stmt = mysqli_prepare($conn, $sql) OR DIE ("Preparation Error");
-            mysqli_stmt_execute($stmt) OR DIE ("Data retrieval error");
-            $result = $stmt->get_result();
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Employee Login</title>
+  <link href="Style/style.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" type="ico" href="img/favicon.ico"/>
+</head>
+<body>
+  <div id="reservationOverviewContainer"> <!--Container for the whole page-->
+        <header>
+            <img src="img/logo_cottage.png" alt="Cottage Logo" id="headerImage" onClick="location.href='signOut.php?type=1'">
+            <div id="headerButtons"> <!--This div is used to align the buttons with flexbox-->
+                <div class="headerOneButton" onClick="location.href='reservationsOverview.php'">Reservations</div>
+                <div class="headerOneButton" onClick="location.href='staffEvents.php'">Events</div>
+                <div class="headerOneButton" onClick="location.href='signOut.php'">Sign out</div>
+            </div>
+        </header>
 
-            $sql1 = "SELECT * FROM reservation";
-            $stmt1 = mysqli_prepare($conn, $sql1) OR DIE ("Preparation Error");
-            mysqli_stmt_execute($stmt1) OR DIE ("Data retrieval error");
-            $result1 = $stmt1->get_result();
-        ?>
-        <table id="reservationsOverviewTable">
-            <tr>
-                <th>Customer Name</th>
-                <th>Customer Last Name</th>
-                <th>Check-in Date</th>
-                <th>Duration</th>
-                <th>Details</th>
-            </tr>
+    <div id="reservationOverviewContent">
+        <div id = "resHeader"><h1>Reservations</h1></div>
             <?php
-                while ($row = mysqli_fetch_array($result) and $row1 = mysqli_fetch_array($result1)) {
-                    echo "<tr>";
-                    echo "<td>".$row['custName']."</td>";
-                    echo "<td>".$row['custSurname']."</td>";
-                    echo "<td>".$row1['resCheckIn']."</td>";
-                    echo "<td>".$row1['resDuration']."</td>";
-                    echo "<td><a href='reservationDetails.php?id=".$row['custEmail']."'>Details</a></td>";
-                    echo "</tr>";
-                }
-        
-
+                $conn = mysqli_connect("localhost", "root", "")
+                OR DIE ("Could not connect to the database");
+                mysqli_select_db($conn, "hp_reserved");
+                $sql = "SELECT resid, resCheckIn, resDuration, reservation.custEmail, custName, custSurname FROM reservation Join customer WHERE reservation.custEmail = customer.custEmail";
+                $stmt = mysqli_prepare($conn, $sql) OR DIE ("Preparation Error");
+                mysqli_stmt_execute($stmt) OR DIE ("Data retrieval error");
+                $result = $stmt->get_result();
 
             ?>
-        </table>
-        <?php
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
-        ?>
-    </body>
+            <table id = "reservationOverviewTable">
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Customer Last Name</th>
+                    <th>Check-in Date</th>
+                    <th>Duration</th>
+                    <th>Details</th>
+                </tr>
+                <?php
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo "<tr>";
+                        echo "<td>".$row['custName']."</td>";
+                        echo "<td>".$row['custSurname']."</td>";
+                        echo "<td>".$row['resCheckIn']."</td>";
+                        echo "<td>".$row['resDuration']."</td>";
+                        echo "<td><a href='reservationDetails.php?id=".$row['resid']."'>Details</a></td>";
+                        echo "</tr>";
+                    }
+                ?>
+            </table>
+            <?php
+                mysqli_stmt_close($stmt);
+                mysqli_close($conn);
+            ?>
+    </div>
+  </div>
+</body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-/*
+
 //Check if a user is logged in and redirect the user back to login page if not
 session_start();
 if (!$_SESSION['loggedIn'] == True) {
@@ -11,9 +11,8 @@ if (!$_SESSION['loggedIn'] == True) {
 if (!$id = filter_input(INPUT_GET, 'id')) {
 	//If there is no is no GET parameter or the GET parameter was tampered with -> send user back to previous page
 	echo '<script type="text/javascript">location.href = "reservationsOverview.php";</script>';
-}*/
+}
 
-$id = 1; //Temp code for testing
 
 //Get data from DB
 if ($conn = mysqli_connect('localhost','root','')) {
