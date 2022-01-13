@@ -746,24 +746,27 @@ input[type="checkbox"]:checked::before {
 
 /*Events page---------------*/
 #containerEvents {
+    height: 100vh;
     display: grid;
     grid-template-columns: 20% 60% 20%; /*FreeSpace GrayBox FreeSpace*/
-    grid-template-rows: 11vh 89vh; /*Header GreyBox*/
-    height: 100%;
+    grid-template-rows: 11vh 89vh; /*Header GreyBox GreyBox GreyBox*/
     background: url(../img/background_house.png);
-    background-size: 100% auto;
-    background-repeat: no-repeat ;
     background-size: cover;
+    background-repeat: repeat;
+    overflow: hidden;
 }
 #contentEvents {
+    height: 100%;
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 2/5;
     background: #E2E2E2 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     opacity: 0.9;
     display: grid;
     grid-template-columns: 3% 94% 3% ;
-    grid-template-rows:2% 7.4% 3% 52% 16% 5.36% 7% 7%;
+    grid-template-rows: 2% 7.4% 3% auto 16% 5.36% 7% 7% 3vh;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 .titleEvents {
     grid-row: 2/3;
@@ -793,7 +796,6 @@ input[type="checkbox"]:checked::before {
 .tdTable {
     opacity: 1;
     border: 0.4vh solid #55453E;
-
 }
 
 #imageEvents {
@@ -816,7 +818,7 @@ input[type="checkbox"]:checked::before {
 }
 .eventsTextEnd {
     text-align: center;
-    font: normal normal 300 1.4vh/1.8vh Segoe UI;
+    font: normal normal 300 1vmax Segoe UI;
     letter-spacing: 0px;
     color: #673828;
     opacity: 1;
@@ -886,6 +888,7 @@ input[type="checkbox"]:checked::before {
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
+    overflow-x: hidden;
 }
 /*header for location page*/
 #loc-header{
@@ -970,9 +973,9 @@ input[type="checkbox"]:checked::before {
 /*Staff Pages - Events----------------------------------*/
 #staffEventsContainer {
     display: grid;
-    height: 100vh;
+    height: auto;
     grid-template-columns: 20vw 60vw 20vw; /*FreeSpace Content FreeSpace*/
-    grid-template-rows: 11vh 2vh 8vh 4vh auto; /*Header FreeSpace Title FreeSpace Content*/
+    grid-template-rows: 11vh 2vh 8vh 4vh auto 5vh; /*Header FreeSpace Title FreeSpace Content*/
     background: #E2E2E2;
 }
 
@@ -1162,6 +1165,7 @@ input[type="checkbox"]:checked::before {
     grid-row: 7/8;
     width: 100%;
     height: 100%;
+    border-collapse: collapse;
 }
 
 #staffDetailsGuestTable th, #staffDetailsGuestTable td   {
