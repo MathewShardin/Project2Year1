@@ -33,16 +33,16 @@ function calculateFinalPrice($start_date, $end_date, $cotType, $champagne) {
     //Determine price per night
     switch ($cotType) {
         case "Straw":
-            $pricePerNight=100;
+            $pricePerNight=50;
             break;
         case "Bamboo":
-            $pricePerNight=200;
+            $pricePerNight=100;
             break;
         case "Brick":
-            $pricePerNight=300;
+            $pricePerNight=150;
             break;
         default:
-            $pricePerNight=300;
+            $pricePerNight=150;
             break;
     }
     //Create an array with all dates of stay
