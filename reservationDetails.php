@@ -62,7 +62,7 @@ if ($conn = mysqli_connect('localhost','root','')) {
 	$sqlGuest = "SELECT `guestName`,`guestSurname`,`guestDateofBirth`,`guestGender` FROM `guest` WHERE `resId`= ?;";
 
 	if ($stmtGuest = mysqli_prepare($conn, $sqlGuest)) {
-		mysqli_stmt_bind_param($stmtGuest, 'i', $Id);
+		mysqli_stmt_bind_param($stmtGuest, 'i', $resId);
 
 		//Execute statement if preparation is successful
 		if (mysqli_stmt_execute($stmtGuest)) {
@@ -74,12 +74,30 @@ if ($conn = mysqli_connect('localhost','root','')) {
 	mysqli_stmt_bind_result($stmtGuest, $guestName, $guestSurname, $guestDateofBirth, $guestGender);
 	mysqli_stmt_store_result($stmtGuest);
 
+
+
+
+	//Data from EVENT table of DB
+	$sqlEvent = "SELECT `eventName` FROM `event` WHERE `eventId`= ?;";
+
+	if ($stmtEvent = mysqli_prepare($conn, $sqlEvent)) {
+		mysqli_stmt_bind_param($stmtEvent, 'i', $eventId);
+
+		//Execute statement if preparation is successful
+		if (mysqli_stmt_execute($stmtEvent)) {
+		} else {echo "<div class='staffEventsPHPResponse'><p>Submission error. Try again later</p></div>";}
+
+	} else {echo "<div id='staffDetailsAutomaticResponse'><p>Failed to retrieve data. Please go back and try again later</p></div>";}
+
+	//Bind results, save results
+	mysqli_stmt_bind_result($stmtEvent, $eventName);
+	mysqli_stmt_store_result($stmtEvent);
+	mysqli_stmt_fetch($stmtEvent);
+	mysqli_stmt_close($stmtEvent);
+
 } else {echo "<div id='staffDetailsAutomaticResponse'><p>Failed to connect. Please go back and try again later</p></div>";}
+
 mysqli_close($conn);
-
-
-
-
 ?>
 <html lnag="en-US">
 	<head>
@@ -133,7 +151,7 @@ mysqli_close($conn);
 			</tr>
 			<tr> <!--Row 3-->
 				<td><?php echo $resCottageType ?></td>
-				<td><?php echo $eventId ?></td>
+				<td><?php echo $eventName ?></td>
 				<td><?php echo $resAddServices ?></td>
 				<td><?php echo $resCheckIn ?></td>
 				<td><?php echo $resDuration ?></td>
@@ -149,11 +167,19 @@ mysqli_close($conn);
 				<th>D.o.B.</th>
 				<th>Gender</th>
 			</tr>
-			<tr>
-				
-			</tr>
+			<?php //Guest info rom DB
+			if (mysqli_stmt_num_rows($stmtGuest) > 0) {
+				while (mysqli_stmt_fetch($stmtGuest)) {
+					echo "<tr>";
+						echo "<td>".$guestName."</td>";
+						echo "<td>".$guestSurname."</td>";
+						echo "<td>".$guestDateofBirth."</td>";
+						echo "<td>".$guestGender."</td>";
+					echo "</tr>";
+				}
+			}
+			?>
 			<?php mysqli_stmt_close($stmtGuest);?>
-
 		</table>
 
 
