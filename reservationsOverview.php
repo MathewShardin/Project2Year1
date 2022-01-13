@@ -35,7 +35,8 @@
                     <th>Customer Last Name</th>
                     <th>Check-in Date</th>
                     <th>Duration</th>
-                    <th>Details</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 <?php
                     while ($row = mysqli_fetch_array($result)) {
@@ -45,6 +46,7 @@
                         echo "<td>".$row['resCheckIn']."</td>";
                         echo "<td>".$row['resDuration']."</td>";
                         echo "<td><a href='reservationDetails.php?id=".$row['resid']."'>Details</a></td>";
+                        echo "<td><a href='reservationDelete.php?id=".$row['resid']."'>Delete</a></td>";
                         echo "</tr>";
                     }
                 ?>
