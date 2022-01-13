@@ -8,7 +8,7 @@ if (!$_SESSION['loggedIn'] == True) {
 }
 
 //Get id of the reservation based on which reservation was chosen on the previous page (reservationsOverview.php)
-if (!$id = filter_input(INPUT_GET, 'id')) {
+if (!$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT)) {
 	//If there is no is no GET parameter or the GET parameter was tampered with -> send user back to previous page
 	echo '<script type="text/javascript">location.href = "reservationsOverview.php";</script>';
 }
