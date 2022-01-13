@@ -975,7 +975,7 @@ input[type="checkbox"]:checked::before {
     display: grid;
     height: auto;
     grid-template-columns: 20vw 60vw 20vw; /*FreeSpace Content FreeSpace*/
-    grid-template-rows: 11vh 2vh 8vh 4vh auto 5vh; /*Header FreeSpace Title FreeSpace Content*/
+    grid-template-rows: 11vh 2vh 8vh 4vh 70vh auto 5vh; /*Header FreeSpace Title FreeSpace Content Content FreeSpace*/
     background: #E2E2E2;
 }
 
@@ -992,7 +992,7 @@ input[type="checkbox"]:checked::before {
 }
 
 #staffEventsTable {
-    grid-row: 5/6;
+    grid-row: 5/7;
     grid-column: 2/3;
     width: 100%;
     font-size: 2vmax;
